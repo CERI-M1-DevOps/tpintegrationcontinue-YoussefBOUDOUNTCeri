@@ -3,21 +3,24 @@ name: Java CI with Maven - Test and package
 on:
   pull_request:
     branches:
-      - main # Déclenche lorsqu’une pull request est créée sur la branche main
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest # Système d'exploitation 
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4 # Se place dans le dépôt courant
+        uses: actions/checkout@v4
 
       - name: Setup Java
-        uses: actions/setup-java@v4 # Installe Java
+        uses: actions/setup-java@v4
         with:
-          java-version: '21' # Version de Java
-          distribution: 'corretto' # Distribution de Java
+          java-version: '21'
+          distribution: 'corretto'
 
-      - name: Build with Maven
-        run: mvn -B package # Exécute la commande Maven pour compiler et lancer les tests
+      - name: Build and Analyze with Sonar
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+          -Dsonar.projectKey=$(echo ${{ github.repository }} | sed 's-/-_-')
