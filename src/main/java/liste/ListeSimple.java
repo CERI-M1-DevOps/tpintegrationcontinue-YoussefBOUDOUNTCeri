@@ -133,6 +133,12 @@ public class ListeSimple {
             precedentR2.setSuivant(tete);
             tete = r2;
         }
+        else 
+        {
+            precedentR1 = getPrecedent(r1);
+            precedentR1.setSuivant(tete);
+            tete = r1;
+        }
         Noeud temp = r2.getSuivant();
         r2.setSuivant(r1.getSuivant());
         r1.setSuivant(temp);
