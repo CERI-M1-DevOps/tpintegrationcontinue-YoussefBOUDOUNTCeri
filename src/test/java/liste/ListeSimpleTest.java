@@ -28,7 +28,7 @@ class ListeSimpleTest {
 
 
     @Test
-    public void ajoutChangeTete() {
+    void ajoutChangeTete() {
         listeATester.ajout(1);
         Noeud teteApresPremierAjout = listeATester.tete;
         listeATester.ajout(1);
