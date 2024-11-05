@@ -1,0 +1,23 @@
+name: Java CI with Maven - Test and package
+
+on:
+  pull_request:
+    branches:
+      - main # Déclenche lorsqu’une pull request est créée sur la branche main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Système d'exploitation 
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # Se place dans le dépôt courant
+
+      - name: Setup Java
+        uses: actions/setup-java@v4 # Installe Java
+        with:
+          java-version: '21' # Version de Java
+          distribution: 'corretto' # Distribution de Java
+
+      - name: Build with Maven
+        run: mvn -B package # Exécute la commande Maven pour compiler et lancer les tests
