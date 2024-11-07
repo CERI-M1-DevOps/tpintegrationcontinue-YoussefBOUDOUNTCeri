@@ -143,38 +143,4 @@ public class ListeSimple {
         r2.setSuivant(r1.getSuivant());
         r1.setSuivant(temp);
     }
-
-    @Test
-    void modifiePremierElementNonExistant() {
-        listeATester.ajout(1);
-        listeATester.ajout(2);
-        listeATester.modifiePremier(3, 4); // Element 3 n'existe pas dans la liste
-        assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
-    }
-
-    @Test
-    void supprimePremierElementNonExistant() {
-        listeATester.ajout(1);
-        listeATester.ajout(2);
-        listeATester.supprimePremier(3); // Element 3 n'existe pas dans la liste
-        assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
-    }
-
-    @Test
-    void supprimePremierListeVideSansEffet() {
-        listeATester.supprimePremier(1); // Liste vide
-        assertNull(listeATester.tete);
-        assertEquals(0, listeATester.getSize());
-    }
-
-    @Test
-    void echangerNoeudsIdentiques() {
-        listeATester.ajout(1);
-        Noeud noeud = listeATester.tete;
-        listeATester.echanger(noeud, noeud); // Echanger un noeud avec lui-même
-        assertEquals("ListeSimple(Noeud(1))", listeATester.toString()); // La liste reste inchangée
-    }
-
-
-
 }
