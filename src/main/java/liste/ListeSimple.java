@@ -4,15 +4,30 @@ public class ListeSimple {
     private long size;
     Noeud tete;
 
+    /**
+     * Constructeur de la classe ListeSimple
+     * @return size : la taille de la liste
+     */
     public long getSize() {
         return size;
     }
 
+    /**
+     * Ajoute un élément à la liste
+     * @param element : l'élément à ajouter
+     * @return void
+     */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
     }
 
+    /**
+     * Modifie le premier élément de la liste
+     * @param element : l'élément à modifier
+     * @param nouvelleValeur : la nouvelle valeur de l'élément
+     * @return void
+     */
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null && courant.getElement() != element)
