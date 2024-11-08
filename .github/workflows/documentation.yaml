@@ -26,6 +26,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.DOC_TOKEN }}
-          publish_dir: ./target/site/apidocs
+          publish_dir: ./target/reports/apidocs
           publish_branch: gh-pages
           allow_empty_commit: true
