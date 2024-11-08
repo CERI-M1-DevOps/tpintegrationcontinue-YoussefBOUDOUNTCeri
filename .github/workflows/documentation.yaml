@@ -22,8 +22,8 @@ jobs:
       - name: Generate Javadoc
         run: mvn -B javadoc:javadoc
 
-      - name: List Javadoc files
-        run: ls -R ./target/site/apidocs
+      - name: Check target directory
+        run: ls -R ./target/site
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
