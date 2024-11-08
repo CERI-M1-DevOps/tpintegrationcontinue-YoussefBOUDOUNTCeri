@@ -19,7 +19,7 @@ public class ListeSimple {
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
-    }
+    } 
 
     /**
      * Modifie le premier élément de la liste
