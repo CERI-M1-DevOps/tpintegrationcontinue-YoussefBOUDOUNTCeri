@@ -60,6 +60,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.0</version>
                <configuration>
+                    <reportOutputDirectory>${project.build.directory}/site/apidocs</reportOutputDirectory>
                     <argLine>${argLine}</argLine>
                 </configuration>
             </plugin>
