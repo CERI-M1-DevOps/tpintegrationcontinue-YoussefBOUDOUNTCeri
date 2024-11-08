@@ -22,6 +22,9 @@ jobs:
       - name: Generate Javadoc
         run: mvn -B javadoc:javadoc
 
+      - name: List Javadoc files
+        run: ls -R ./target/site/apidocs
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -29,3 +32,4 @@ jobs:
           publish_dir: ./target/site/apidocs
           publish_branch: gh-pages
           allow_empty_commit: true
+          force_orphan: true
