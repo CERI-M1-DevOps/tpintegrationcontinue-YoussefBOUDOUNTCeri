@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '21'
-          distribution: 'corretto'
+          distribution: 'corretto' 
 
       - name: Build and analyze
         env:
